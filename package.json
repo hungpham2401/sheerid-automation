@@ -7,8 +7,7 @@
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
-    "railway:build": "npm install && npx puppeteer browsers install chrome --platform=linux --arch=x64 && npm run build",
-    "railway:start": "NODE_ENV=production npm start",
+
     "test:sheerid": "tsx app/utils/test-sheerid.ts",
     "test:sheerid:direct": "tsx app/utils/test-sheerid-direct.ts"
   },
@@ -23,8 +22,7 @@
     "input-otp": "^1.4.2",
     "isbot": "^5.1.33",
     "lucide-react": "^0.562.0",
-    "puppeteer": "^24.36.0",
-    "puppeteer-core": "^24.36.0",
+
     "radix-ui": "^1.4.3",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
