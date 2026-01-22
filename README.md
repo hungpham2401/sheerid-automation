@@ -1,215 +1,183 @@
-# 🎓 SheerID Student Verification Automation
+# SheerID Student Verification Automation
 
-A production-ready web application for automating SheerID student verification form submissions using real browser automation with Puppeteer.
+A web application for managing SheerID student verification workflows with realistic simulation mode.
 
 ## ✨ Features
 
-- 🤖 **Real Browser Automation** - Uses Puppeteer to automate SheerID form filling
-- 📸 **Screenshot Capture** - Takes screenshots at each step for verification
-- 🎯 **Smart Fallback** - Auto-detects environment and falls back to simulation when needed
-- 🚀 **Railway Ready** - Optimized for Railway.app deployment (x86_64)
-- 📊 **Progress Tracking** - Real-time progress updates during verification
-- 🔒 **TypeScript** - Full type safety throughout the application
-- 🎨 **Modern UI** - Built with React Router v7, Radix UI, and CSS Modules
-
-### Styling & Theming
-
-- This project uses CSS modules as the styling solution, Radix as the component library, and Open Props for styling tokens and theming
-- Project theme is defined in `app/styles/theme.css`, used as a design system for all UI building
-- Base design tokens are defined in `app/styles/tokens/<token-type>.css`, used as an immutable base design system for all the theme and all UI
+- 🎯 **Simulation Mode** - Realistic verification workflow simulation
+- 📋 **Student Profile Generator** - Auto-generate realistic student data
+- 📊 **Progress Tracking** - Real-time status updates
+- 📸 **Visual Feedback** - Screenshot placeholders at each step
+- 🎓 **Penn State Integration** - Pre-configured campus data
 
 ## 🚀 Quick Start
 
-### Local Development (Simulation Mode)
+### Local Development
 
 ```bash
 # Install dependencies
 npm install
 
-# Start dev server
+# Start development server
 npm run dev
 ```
 
-Visit `http://localhost:5173` and submit a verification request.
+Visit `http://localhost:5173`
 
-**Note:** Local mode uses simulation. For REAL browser automation, deploy to Railway.
+### Railway Deployment
 
-### Test Real Automation (if Chrome installed)
+1. **Connect Repository:**
+   ```bash
+   # Push to GitHub
+   git push origin main
+   ```
 
-```bash
-npm run test:sheerid
-```
+2. **Deploy on Railway:**
+   - Visit [Railway](https://railway.app)
+   - Connect your GitHub repository
+   - Railway auto-deploys!
 
----
+3. **Access Your App:**
+   - Get public URL from Railway dashboard
+   - Test verification workflow
 
-## 🎯 Deploy to Railway (REAL Automation)
-
-**Recommended for production use!**
-
-```bash
-# Install Railway CLI
-npm i -g @railway/cli
-
-# Login to Railway
-railway login
-
-# Deploy (one command!)
-railway up
-```
-
-Railway automatically:
-- ✅ Installs x86_64 Chromium
-- ✅ Configures Puppeteer
-- ✅ Enables REAL browser automation
-- ✅ Gives you a live URL
-
-**See [QUICKSTART.md](./QUICKSTART.md) for detailed 5-minute setup guide.**
-
----
-
-## 📚 Documentation
-
-### Setup & Deployment
-- **[QUICKSTART.md](./QUICKSTART.md)** - 5-minute Railway setup guide
-- **[DEPLOY.md](./DEPLOY.md)** - Detailed deployment instructions
-- **[README_RAILWAY.md](./README_RAILWAY.md)** - Railway-specific TL;DR
-
-### Technical Guides
-- **[README_AUTOMATION.md](./README_AUTOMATION.md)** - Complete automation guide
-- **[AUTOMATION_SETUP.md](./AUTOMATION_SETUP.md)** - Architecture fix details
-- **[SHEERID_SETUP.md](./SHEERID_SETUP.md)** - SheerID integration guide
-
----
-
-## 🏗️ Architecture
-
-### Tech Stack
-- **React Router v7** - Full-stack React framework
-- **Puppeteer** - Browser automation
-- **TypeScript** - Type safety
-- **Radix UI** - Accessible components
-- **CSS Modules** - Scoped styling
-- **Railway** - Cloud deployment (x86_64)
-
-### Key Components
+## 📁 Project Structure
 
 ```
 app/
 ├── components/
-│   └── verification-form/     # Main form UI
+│   ├── verification-form/     # Main verification form
+│   ├── progress-log/          # Real-time progress display
+│   ├── results-table/         # Results history
+│   └── ui/                    # Reusable UI components
 ├── services/
-│   ├── browser-automation.ts  # Puppeteer automation (REAL)
+│   ├── browser-automation.ts  # Simulation engine
 │   ├── verification-service.ts # Business logic
-│   └── sheerid-api.ts         # SheerID integration
+│   └── document-generator.ts   # Document utilities
 ├── utils/
-│   ├── student-generator.ts   # Student data generation
-│   └── test-sheerid.ts        # Test utility
-└── types/
-    └── verification.ts        # TypeScript types
+│   └── student-generator.ts   # Profile generation
+├── data/
+│   ├── penn-state-campuses.ts # Campus data
+│   └── mock-verification-data.ts # Sample data
+└── routes/
+    └── home.tsx               # Main page
 ```
 
----
+## 🎨 Tech Stack
 
-## 🔧 Scripts
+- **React Router v7** - Full-stack React framework
+- **TypeScript** - Type safety
+- **CSS Modules** - Component styling
+- **Radix UI** - Accessible components
+- **Lucide React** - Icons
+- **React Hook Form** - Form management
+
+## 🔧 Configuration
+
+**Environment Variables:**
+- `NODE_ENV` - Environment mode (auto-set by Railway)
+
+**No additional configuration required!**
+
+## 📝 Usage
+
+1. **Generate Student Profile:**
+   - Click "Generate Random Student"
+   - Review generated data
+
+2. **Enter Verification URL:**
+   - Paste SheerID verification URL
+   - Example: `https://services.sheerid.com/verify/abc123/`
+
+3. **Submit Verification:**
+   - Click "Start Verification"
+   - Watch real-time progress
+   - Review results
+
+4. **View Results:**
+   - Check verification ID
+   - Review screenshots
+   - Export data if needed
+
+## 🎓 Penn State Campuses
+
+Pre-configured campuses:
+- University Park (Main Campus)
+- Abington
+- Altoona
+- Berks
+- Brandywine
+- DuBois
+- Erie (Behrend)
+- Fayette
+- Greater Allegheny
+- Harrisburg
+- Hazleton
+- Lehigh Valley
+- Mont Alto
+- New Kensington
+- Schuylkill
+- Shenango
+- Wilkes-Barre
+- World Campus (Online)
+- York
+
+## 🛠️ Development
 
 ```bash
-# Development
-npm run dev              # Start dev server (simulation mode)
-npm run test:sheerid     # Test with real SheerID URL
+# Type checking
+npm run typecheck
 
-# Production
-npm run build            # Build for production
-npm start                # Start production server
+# Build for production
+npm run build
 
-# Railway
-npm run railway:build    # Railway build command (installs x64 Chrome)
-npm run railway:start    # Railway start command
-
-# Validation
-npm run typecheck        # TypeScript validation
+# Start production server
+npm start
 ```
 
----
+## 📦 Deployment
 
-## ⚙️ Environment Variables
+### Railway (Recommended)
 
-**Railway (Auto-configured):**
-- `NODE_ENV=production`
-- `RAILWAY_ENVIRONMENT` - Auto-set by Railway
-- `PUPPETEER_EXECUTABLE_PATH` - Auto-configured in code
+Railway automatically:
+- ✅ Detects Node.js project
+- ✅ Installs dependencies
+- ✅ Builds application
+- ✅ Deploys to production
 
-**Local (Optional):**
-- `PUPPETEER_EXECUTABLE_PATH` - Path to Chrome/Chromium
+**Just push to GitHub and Railway handles the rest!**
 
-No manual configuration needed for Railway deployment!
+### Manual Deployment
 
----
+```bash
+# Build
+npm run build
 
-## 🎯 How It Works
+# Start
+npm start
+```
 
-1. **User submits form** with SheerID URL and student data
-2. **Service layer** generates realistic student profile
-3. **Browser automation** (production) or simulation (dev):
-   - Launches headless Chrome
-   - Navigates to SheerID verification URL
-   - Fills form fields automatically
-   - Takes screenshots at each step
-   - Submits form
-   - Extracts verification ID
-4. **Returns result** with verification ID and screenshots
+## 🔒 Security
 
----
+- Form validation with React Hook Form
+- Type-safe with TypeScript
+- Secure environment configuration
+- No sensitive data in code
 
-## 🐛 Troubleshooting
-
-### Error: "Architecture mismatch"
-**Fixed!** Code now forces x86_64 Chrome installation.
-
-### Error: "Chrome not found"
-Deploy to Railway - Chrome is auto-installed.
-
-### Local automation not working?
-Install Chrome/Chromium locally, or use Railway for guaranteed compatibility.
-
-**See [AUTOMATION_SETUP.md](./AUTOMATION_SETUP.md) for detailed troubleshooting.**
-
----
-
-## 💰 Cost
-
-**Railway Free Tier:**
-- $5/month credit
-- ~1,000 verifications/month = **FREE**
-- Perfect for testing and demos
-
----
-
-## 🎊 Status
-
-- ✅ Real browser automation working on Railway (x86_64)
-- ✅ Architecture mismatch fixed (forced x64 Chrome)
-- ✅ Screenshot capture implemented
-- ✅ Progress tracking implemented
-- ✅ Smart environment detection
-- ✅ Auto-fallback to simulation
-- ✅ TypeScript fully typed
-- ✅ Production ready
-
----
-
-## 📖 Learn More
+## 📚 Resources
 
 - [React Router Documentation](https://reactrouter.com/)
-- [Puppeteer Documentation](https://pptr.dev/)
 - [Railway Documentation](https://docs.railway.app/)
-- [SheerID API Reference](https://developer.sheerid.com/)
+- [Radix UI Documentation](https://www.radix-ui.com/)
+
+## 📄 License
+
+MIT
+
+## 🤝 Contributing
+
+Contributions welcome! Please open an issue or PR.
 
 ---
 
-**Ready to automate SheerID verifications?**
-
-```bash
-railway up
-```
-
-🚀 **Deploy and watch it work!** ✨
+**Built with ❤️ using React Router v7**
