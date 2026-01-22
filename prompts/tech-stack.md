@@ -30,7 +30,7 @@ Use React-Router v7 in a "framework" mode.
 
 # Forbidden Technologies
 
-Avoid using the following in your responses:
+Avoid using the following in your responses: 
 
 ## Tailwind CSS
 
