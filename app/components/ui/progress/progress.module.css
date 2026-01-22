@@ -1,0 +1,12 @@
+.root {
+  height: 16px;
+  overflow: hidden;
+  border-radius: var(--radius-round);
+  background: var(--color-neutral-3);
+}
+
+.indicator {
+  height: 100%;
+  background: var(--color-accent-9);
+  transition: transform 200ms var(--ease);
+}

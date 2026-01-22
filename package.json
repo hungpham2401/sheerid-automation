@@ -1,0 +1,58 @@
+{
+  "name": "project",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc",
+    "railway:build": "npm install && npx puppeteer browsers install chrome --platform=linux --arch=x64 && npm run build",
+    "railway:start": "NODE_ENV=production npm start",
+    "test:sheerid": "tsx app/utils/test-sheerid.ts",
+    "test:sheerid:direct": "tsx app/utils/test-sheerid-direct.ts"
+  },
+  "dependencies": {
+    "@dazl/color-scheme": "^1.2.1",
+    "@hookform/resolvers": "^5.2.2",
+    "@react-router/node": "^7.12.0",
+    "@react-router/serve": "^7.12.0",
+    "classnames": "^2.5.1",
+    "cmdk": "^1.1.1",
+    "embla-carousel-react": "^8.6.0",
+    "input-otp": "^1.4.2",
+    "isbot": "^5.1.33",
+    "lucide-react": "^0.562.0",
+    "puppeteer": "^24.36.0",
+    "puppeteer-core": "^24.36.0",
+    "radix-ui": "^1.4.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-hook-form": "^7.71.1",
+    "react-resizable-panels": "^4.4.1",
+    "react-router": "^7.12.0",
+    "recharts": "^3.6.0",
+    "sonner": "^2.0.7",
+    "vaul": "^1.1.2",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@dazl-lib/radix-ui": "^0.1.0",
+    "@dazl/dev": "^1.4.0",
+    "@react-router/dev": "^7.12.0",
+    "@types/node": "22",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
+    "prettier": "^3.8.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vite-tsconfig-paths": "^6.0.4"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "endOfLine": "auto"
+  },
+  "overrides": {
+    "@radix-ui/react-primitive": "2.1.3"
+  }
+}

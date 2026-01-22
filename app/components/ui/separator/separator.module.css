@@ -1,0 +1,12 @@
+.root {
+  flex-shrink: 0;
+  background-color: var(--color-neutral-6);
+}
+
+.horizontal {
+  height: var(--border-size-1);
+}
+
+.vertical {
+  width: var(--border-size-1);
+}

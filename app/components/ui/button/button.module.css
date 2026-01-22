@@ -1,0 +1,127 @@
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--space-2);
+  white-space: nowrap;
+  border-radius: var(--radius-3);
+  font-size: var(--font-size-2);
+  font-weight: 600;
+  transition: all 200ms var(--ease);
+  border: none;
+  cursor: pointer;
+}
+
+.base:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent--border); /* TODO: fix shadow color*/
+}
+
+.base:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.base svg {
+  pointer-events: none;
+  width: 16px;
+  aspect-ratio: 1;
+  margin-inline-start: -2px;
+}
+
+/* Variants */
+.default {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.default::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.default:hover::before {
+  left: 100%;
+}
+
+.default:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
+
+.default:focus {
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+.default:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.destructive {
+  background: var(--color-error-9);
+  color: var(--color-error-contrast);
+}
+
+.destructive:hover {
+  background: color-mix(in srgb, var(--color-error-10) 90%, transparent);
+}
+
+.outline {
+  border: var(--border-size-1) solid var(--color-accent-7);
+  background: transparent;
+  color: var(--color-accent-11);
+}
+
+.outline:hover {
+  border: var(--border-size-1) solid var(--color-accent-8);
+  color: var(--color-accent-12);
+}
+
+.secondary {
+  background: var(--color-accent-3);
+  color: var(--color-accent-11);
+}
+
+.secondary:hover {
+  background: color-mix(in srgb, var(--color-accent-4) 80%, transparent);
+}
+
+.link {
+  background: transparent;
+  color: var(--color-accent-11);
+  text-underline-offset: var(--space-1);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Sizes */
+.sizeDefault {
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--font-size-2);
+}
+
+.sizeSm {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-2);
+  font-size: var(--font-size-1);
+}
+
+.sizeLg {
+  padding: var(--space-4) var(--space-7);
+  border-radius: var(--radius-3);
+  font-size: var(--font-size-3);
+}

@@ -1,0 +1,141 @@
+.trigger {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--radius-2);
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+  background: var(--color-neutral-1);
+  color: var(--color-neutral-12);
+}
+
+.trigger:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-neutral-6);
+}
+
+.trigger:disabled {
+  cursor: not-allowed;
+  background-color: var(--color-neutral-2);
+  color: var(--color-neutral-9);
+}
+
+.trigger > span {
+  line-clamp: 1;
+  overflow: hidden;
+}
+
+.icon {
+  aspect-ratio: 1;
+  width: 20px;
+  color: var(--color-neutral-9);
+}
+
+.scrollButton {
+  display: flex;
+  cursor: default;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+}
+
+.scrollButton:hover {
+  background: var(--color-neutral-4);
+  color: var(--color-neutral-12);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-height: 384px;
+  overflow: hidden;
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-1);
+  color: var(--color-neutral-11);
+  box-shadow: var(--shadow-3);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+}
+
+.content[data-state="open"] {
+  animation: contentShow 200ms var(--ease);
+}
+
+.content[data-state="closed"] {
+  animation: contentHide 200ms var(--ease);
+}
+
+.viewport {
+  padding: var(--space-1);
+}
+
+.viewportPopper {
+  height: var(--radix-select-trigger-height);
+  min-width: var(--radix-select-trigger-width);
+}
+
+.label {
+  padding: var(--space-2);
+  font-weight: 600;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  cursor: default;
+  user-select: none;
+  align-items: center;
+  border-radius: var(--radius-1);
+  padding: var(--space-2) var(--space-4);
+  outline: none;
+}
+
+.item:focus {
+  background: var(--color-neutral-3);
+}
+
+.item[data-disabled] {
+  pointer-events: none;
+  color: var(--color-neutral-9);
+}
+
+.indicator {
+  display: flex;
+  aspect-ratio: 1;
+  width: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicatorIcon {
+  color: var(--color-accent-9);
+}
+
+.separator {
+  margin: var(--space-1);
+  height: var(--border-size-1);
+  background: var(--color-neutral-6);
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes contentHide {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}

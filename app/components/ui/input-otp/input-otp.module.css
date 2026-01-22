@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.container:has(:disabled) {
+  opacity: 0.5;
+}
+
+.input {
+  cursor: default;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+}
+
+.slot {
+  position: relative;
+  display: flex;
+  height: 80px;
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-size-1) solid var(--color-surface-3);
+  border-left: none;
+  font-size: var(--font-size-2);
+  transition: all 200ms var(--ease);
+}
+
+.slot:first-child {
+  border-radius: var(--radius-2) 0 0 var(--radius-2);
+  border-left: var(--border-size-1) solid var(--color-surface-3);
+}
+
+.slot:last-child {
+  border-radius: 0 var(--radius-2) var(--radius-2) 0;
+}
+
+.slotActive {
+  z-index: 10;
+  box-shadow: 0 0 0 2px var(--color-surface-4);
+}
+
+.caret {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caretLine {
+  height: 32px;
+  width: 1px;
+  background: var(--color-text-1);
+  animation: blink 1000ms var(--ease) infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

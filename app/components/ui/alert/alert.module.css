@@ -1,0 +1,30 @@
+.alert {
+  border-radius: var(--radius-3);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+  padding: var(--space-4);
+  font-size: var(--font-size-1);
+}
+
+/* Variants */
+.default {
+  background: var(--color-neutral-3);
+  color: var(--color-neutral-11);
+}
+
+.destructive {
+  background-color: var(--color-error-9);
+  color: var(--color-error-contrast);
+}
+
+.destructive svg {
+  color: var(--color-error-contrast);
+}
+
+.title {
+  margin-bottom: var(--space-1);
+  font-weight: 500;
+  font-size: var(--font-size-2);
+}
+
+.description {
+}

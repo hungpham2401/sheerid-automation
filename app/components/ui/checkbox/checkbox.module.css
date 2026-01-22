@@ -1,0 +1,41 @@
+.root {
+  height: 20px;
+  width: 20px;
+  flex-shrink: 0;
+  border-radius: var(--radius-2);
+  border: var(--border-size-1) solid var(--color-neutral-7);
+  background: var(--color-neutral-3);
+  padding: 2px;
+}
+
+.root:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent-8);
+}
+
+.root:disabled {
+  cursor: not-allowed;
+  background-color: var(--color-neutral-2);
+  color: var(--color-neutral-10);
+}
+
+.root[data-state="checked"] {
+  background: var(--color-accent-9);
+  color: var(--color-accent-contrast);
+}
+
+.root[data-state="checked"]:disabled {
+  background-color: var(--color-accent-3);
+  color: var(--color-neutral-10);
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+}
+
+.icon {
+  height: 100%;
+}

@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  aspect-ratio: 16/9;
+  justify-content: center;
+  font-size: var(--font-size-0);
+}
+
+.container :global(.recharts-cartesian-axis-tick text) {
+  fill: var(--color-text-2);
+}
+
+.container :global(.recharts-cartesian-grid line[stroke="#ccc"]) {
+  stroke: color-mix(in srgb, var(--color-surface-3) 50%, transparent);
+}
+
+.container :global(.recharts-curve.recharts-tooltip-cursor) {
+  stroke: var(--color-surface-3);
+}
+
+.container :global(.recharts-dot[stroke="#fff"]) {
+  stroke: transparent;
+}
+
+.container :global(.recharts-layer),
+.container :global(.recharts-surface) {
+  outline: none;
+}
+
+.container :global(.recharts-polar-grid[stroke="#ccc"]),
+.container :global(.recharts-reference-line[stroke="#ccc"]) {
+  stroke: var(--color-surface-3);
+}
+
+.container :global(.recharts-radial-bar-background-sector) {
+  fill: var(--color-surface-2);
+}
+
+.container :global(.recharts-rectangle.recharts-tooltip-cursor) {
+  fill: var(--color-surface-2);
+}
+
+.container :global(.recharts-sector[stroke="#fff"]) {
+  stroke: transparent;
+}
+
+.tooltip {
+  display: grid;
+  min-width: 8rem;
+  gap: var(--space-2);
+  border-radius: var(--radius-3);
+  border: var(--border-size-1) solid color-mix(in srgb, var(--color-surface-3) 50%, transparent);
+  background: var(--color-surface-1);
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--font-size-0);
+  box-shadow: var(--shadow-4);
+}
+
+.tooltipRow {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.tooltipIndicator {
+  height: 16px;
+  width: 16px;
+  border-radius: 2px;
+}
+
+.tooltipLabel {
+  font-weight: 500;
+}
+
+.tooltipValue {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-1);
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+.legendTop {
+  padding-bottom: var(--space-5);
+}
+
+.legendBottom {
+  padding-top: var(--space-5);
+}

@@ -1,0 +1,51 @@
+.item {
+}
+
+.header {
+  display: flex;
+  margin: 0;
+  border-bottom: var(--border-size-1) solid var(--color-neutral-6);
+}
+
+.trigger {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3);
+  font-weight: 300;
+  color: var(--color-neutral-11);
+  transition: all 200ms var(--ease);
+  background-color: var(--color-neutral-3);
+}
+
+.trigger:hover {
+  text-decoration: underline;
+}
+
+.chevron {
+  aspect-ratio: 1;
+  width: 20px;
+  flex-shrink: 0;
+  transition: transform 200ms var(--ease);
+}
+
+.trigger[data-state="open"] .chevron {
+  transform: rotate(180deg);
+}
+
+.content {
+  overflow: hidden;
+  background-color: var(--color-neutral-2);
+  color: var(--color-neutral-11);
+  padding: var(--space-4);
+}
+
+.content[data-state="closed"] {
+}
+
+.content[data-state="open"] {
+}
+
+.contentInner {
+}

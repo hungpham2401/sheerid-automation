@@ -1,0 +1,10 @@
+.content {
+  z-index: 5;
+  overflow: hidden;
+  border-radius: var(--radius-2);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+  background: var(--color-neutral-3);
+  padding: var(--space-2);
+  color: var(--color-neutral-11);
+  box-shadow: var(--shadow-3);
+}

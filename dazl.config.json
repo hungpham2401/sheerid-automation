@@ -1,0 +1,32 @@
+{
+  "cssTokens": {
+    "foundation": {
+      "app/styles/tokens/typography.css": {
+        "fontFamily": { "pattern": "--font-{word-list}", "groupName": "Font Family", "tokenName": "{token}" },
+        "fontSize": ["--font-size-{number}", "--font-size-fluid-{number}"],
+        "lineHeight": { "pattern": "--font-lineheight-{number}", "groupName": "Line Height" }
+      },
+      "app/styles/tokens/spacings.css": {
+        "space": "--space-{number-list}",
+        "size": "--space-{number-list}"
+      },
+      "app/styles/tokens/decorations.css": {
+        "radius": "--radius-{alphanum}",
+        "shadow": ["--shadow-{number}", "--inner-shadow-{number}"],
+        "borderWidth": "--border-size-{number}"
+      },
+      "app/styles/tokens/colors.css": {
+        "color": "--{word}-{alphanum}"
+      }
+    },
+    "semantic": {
+      "app/styles/theme.css": {
+        "font": { "pattern": "--font-{word-list}", "tokenName": "{token}" },
+        "color": "--color-{word}-{alphanum-list}"
+      }
+    }
+  },
+  "projectPrompts": {
+    "promptsFolderName": "prompts"
+  }
+}

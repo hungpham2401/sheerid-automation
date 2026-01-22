@@ -1,0 +1,73 @@
+.root {
+  position: relative;
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+}
+
+.containerVertical {
+  flex-direction: column;
+  margin-top: calc(var(--space-6) * -1);
+}
+
+.containerHorizontal {
+  margin-left: calc(var(--space-6) * -1);
+}
+
+.item {
+  min-width: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 100%;
+}
+
+.itemHorizontal {
+  padding-left: var(--space-6);
+}
+
+.itemVertical {
+  padding-top: var(--space-6);
+}
+
+.button {
+  position: absolute;
+  height: 64px;
+  width: 64px;
+  border-radius: var(--radius-round);
+}
+
+.buttonHorizontal {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buttonVertical {
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.previous.buttonHorizontal {
+  left: -96px;
+}
+
+.next.buttonHorizontal {
+  right: -96px;
+}
+
+.previous.buttonVertical {
+  top: -96px;
+}
+
+.next.buttonVertical {
+  bottom: -96px;
+}
+
+.icon {
+  height: 32px;
+  width: 32px;
+}

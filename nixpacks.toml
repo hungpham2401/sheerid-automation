@@ -1,0 +1,20 @@
+# Nixpacks configuration for Railway - x86_64 Linux
+[phases.setup]
+nixPkgs = ["nodejs_22", "chromium"]
+nixLibs = ["glibc", "gcc-unwrapped", "nss", "nspr", "atk", "at-spi2-atk", "cups", "dbus", "libdrm", "gtk3", "pango", "cairo", "xorg.libX11", "xorg.libXcomposite", "xorg.libXdamage", "xorg.libXext", "xorg.libXfixes", "xorg.libXrandr", "mesa", "expat", "alsa-lib"]
+
+[phases.install]
+cmds = [
+  "npm ci --prefer-offline --no-audit",
+  "npx puppeteer browsers install chrome --platform=linux --arch=x64"
+]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "npm run railway:start"
+
+[variables]
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "false"
+PUPPETEER_EXECUTABLE_PATH = "/root/.cache/puppeteer/chrome/linux-*/chrome-linux64/chrome"

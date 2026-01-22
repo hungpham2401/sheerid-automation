@@ -1,0 +1,87 @@
+.nav {
+  margin-inline: auto;
+}
+
+.list {
+  display: flex;
+  gap: var(--space-2);
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  height: 32px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-2);
+  transition: all 200ms var(--ease);
+}
+
+.link:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-neutral-6);
+}
+
+.page {
+}
+
+.page:hover {
+  background: var(--color-accent-4);
+  color: var(--color-accent-12);
+}
+
+.pageActive {
+  border: var(--border-size-1) solid var(--color-accent-7);
+  background-color: var(--color-accent-9);
+  color: var(--color-accent-contrast);
+}
+
+.pageActive:hover {
+  background: var(--color-accent-4);
+}
+
+.linkIcon {
+  width: 32px;
+}
+
+.directionLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-2);
+  font-weight: 500;
+  height: 32px;
+  padding-inline: var(--space-4);
+  transition: all 200ms var(--ease);
+  gap: var(--space-1);
+}
+
+.directionLink:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-neutral-6);
+}
+
+.previous {
+  padding-left: var(--space-4);
+}
+
+.next {
+  padding-right: var(--space-4);
+}
+
+.icon {
+  aspect-ratio: 1;
+  width: 20px;
+}
+
+.ellipsis {
+  display: flex;
+  aspect-ratio: 1;
+  width: 20px;
+  align-items: center;
+  justify-content: center;
+}

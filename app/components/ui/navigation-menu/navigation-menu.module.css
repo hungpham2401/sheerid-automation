@@ -1,0 +1,194 @@
+.root {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  max-width: max-content;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  flex: 1;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+}
+
+.trigger {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-2);
+  padding: var(--space-2);
+  font-weight: 500;
+  transition: colors 200ms var(--ease);
+  color: var(--color-neutral-11);
+}
+
+.trigger:hover,
+.trigger:focus {
+  background: var(--color-neutral-3);
+  color: var(--color-neutral-12);
+  outline: var(--border-size-1) solid var(--color-neutral-6);
+}
+
+.trigger:disabled {
+  background-color: var(--color-neutral-2);
+  pointer-events: none;
+}
+
+.trigger[data-active],
+.trigger[data-state="open"] {
+  background: var(--color-neutral-4);
+}
+
+.chevron {
+  position: relative;
+  top: 1px;
+  margin-left: var(--space-2);
+  aspect-ratio: 1;
+  width: 20px;
+  transition: transform 200ms var(--ease);
+}
+
+.trigger[data-state="open"] .chevron {
+  transform: rotate(180deg);
+}
+
+.content {
+  position: absolute;
+  width: auto;
+}
+
+.content[data-motion^="from-"] {
+  animation: slideIn 200ms var(--ease);
+}
+
+.content[data-motion^="to-"] {
+  animation: slideOut 200ms var(--ease);
+}
+
+.viewportWrapper {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.viewport {
+  position: relative;
+  margin-top: var(--space-2);
+  height: var(--radix-navigation-menu-viewport-height);
+  width: var(--radix-navigation-menu-viewport-width);
+  overflow: hidden;
+  border-radius: var(--radius-2);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+  background: var(--color-neutral-3);
+  color: var(--color-neutral-11);
+  box-shadow: var(--shadow-3);
+  transform-origin: top center;
+}
+
+.viewport[data-state="open"] {
+  animation: scaleIn 200ms var(--ease);
+}
+
+.viewport[data-state="closed"] {
+  animation: scaleOut 200ms var(--ease);
+}
+
+.indicator {
+  top: 100%;
+  z-index: 1;
+  display: flex;
+  height: 8px;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.indicator[data-state="visible"] {
+  animation: fadeIn 200ms var(--ease);
+}
+
+.indicator[data-state="hidden"] {
+  animation: fadeOut 200ms var(--ease);
+}
+
+.arrow {
+  position: relative;
+  top: 60%;
+  aspect-ratio: 1;
+  width: 20px;
+  transform: rotate(45deg);
+  border-top-left-radius: var(--radius-1);
+  box-shadow: var(--shadow-2);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(416px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(416px);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

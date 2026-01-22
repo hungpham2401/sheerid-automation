@@ -1,0 +1,97 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  background: color-mix(in srgb, var(--color-neutral-1) 80%, transparent);
+}
+
+.overlay[data-state="open"] {
+  animation: var(--animation-fade-in);
+}
+
+.overlay[data-state="closed"] {
+  animation: var(--animation-fade-out);
+}
+
+.content {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  display: grid;
+  transform: translate(-50%, -50%);
+  gap: var(--space-4);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+  background: var(--color-neutral-3);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-4);
+  transition: all 200ms var(--ease);
+  color: var(--color-neutral-11);
+  border-radius: var(--radius-3);
+}
+
+.content[data-state="open"] {
+  animation: contentShow 200ms var(--ease);
+}
+
+.content[data-state="closed"] {
+  animation: contentHide 200ms var(--ease);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: left;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-2);
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.title {
+}
+
+.description {
+  color: var(--color-neutral-11);
+  margin-block-end: var(--space-4);
+}
+
+.cancel {
+}
+
+.cancelButton {
+  color: var(--color-neutral-11);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+}
+
+.cancelButton:hover {
+  color: var(--color-neutral-12);
+  border: var(--border-size-1) solid var(--color-neutral-7);
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes contentHide {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+}

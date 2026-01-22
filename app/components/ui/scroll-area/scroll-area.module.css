@@ -1,0 +1,34 @@
+.root {
+  position: relative;
+}
+
+.viewport {
+  height: 100%;
+}
+
+.scrollbar {
+  display: flex;
+  touch-action: none;
+  user-select: none;
+  transition: colors 200ms var(--ease);
+}
+
+.scrollbarVertical {
+  height: 100%;
+  width: 16px;
+  border-left: var(--border-size-1) solid var(--color-neutral-6);
+  padding: 3px;
+}
+
+.scrollbarHorizontal {
+  height: 16px;
+  flex-direction: column;
+  border-top: var(--border-size-1) solid var(--color-neutral-6);
+  padding: 2px;
+}
+
+.thumb {
+  flex: 1;
+  border-radius: var(--radius-round);
+  background: var(--color-neutral-4);
+}
